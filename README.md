@@ -2,7 +2,8 @@
 
 ## Block ScreenShots and Screen Recording without adding any packages in Flutter
 
-:bulb: Notic: Only works on real Device | the codes dosen't works on simulator for both platform
+:bulb: Notic: Only works on real Device | the codes dosen't works on simulator for both platform and tutorial available in YouTube
+
 
 
 
