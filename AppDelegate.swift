@@ -17,13 +17,17 @@ import Flutter
 // +  add this section
 
 extension UIWindow {
-func makeSecure() {
+  func makeSecure() {
     let field = UITextField()
+    let view = UIView(frame: CGRect(x: 0, y: 0, width: field.frame.self.width, height: field.frame.self.height))
+    let image = UIImageView(image: UIImage(named: "whiteImage"))
+    image.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
     field.isSecureTextEntry = true
-    self.addSubview(field)
-    field.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-    field.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-    self.layer.superlayer?.addSublayer(field.layer)
-    field.layer.sublayers?.first?.addSublayer(self.layer)
+    addSubview(field)
+    view.addSubview(image)
+    layer.superlayer?.addSublayer(field.layer)
+    field.layer.sublayers?.last!.addSublayer(layer)
+    field.leftView = view
+    field.leftViewMode = .always
   }
 }
